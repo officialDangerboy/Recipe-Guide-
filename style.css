@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif;
+}
+html,body{
+    background:#fff5f2;
+    color:#fff;
+}
+header{
+    position: sticky;
+    top:0;
+    z-index:1;
+}
+header nav{
+    width: 100%;
+    padding: 15px 25px;
+    background: #ff4107;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(1rem);
+}
+header nav h1 {
+    font-size: 35px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color:white;
+}
+.searchBox{
+    display: flex;
+    gap:10px;
+}
+.searchBox input, .searchBox button{
+    padding: 8px 10px;
+    border:none;
+    outline: none;
+    font-size:25px;
+    border-radius: 5px;
+    color:#ff4107;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+
+.searchBox input::placeholder {
+    color:#ff4107;
+}
+
+.searchBox input:focus{
+    background: #ffddd3;
+}
+
+.searchBox button {
+    background:#fff;
+    color:#ff4107;
+    font-weight: 800;
+    transition:all 0.5s ease;
+}
+.searchBox button:hover,.cards .recipeBtn:hover,.recipePop button:hover {
+    transform: scale(1.1);
+}
+.recipeContainer{
+    color:#ff4107;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.recipeContainer.hide{
+    filter:blur(10px);
+}
+
+
+.recipeContainer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:30px;
+    margin-bottom: 55px;
+}
+
+.cards{
+    background: linear-gradient(120deg,#912200,#ff4107,#912200);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:15px;
+    color:white;
+    border:2px solid white;
+    max-width: 350px;
+    transition:all 0.5s ease;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.cards:hover{
+    transform: scale(1.05);
+}
+.cards img{
+    border-radius: 10px;
+    border:2px solid #fff;
+}
+
+.cards .recipeBtn{
+    border:none;
+    outline: none;
+    background:white;
+    color:#ff4107;
+    padding: 10px 15px;
+    font-weight: 800;
+    font-size:20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    transition:all 0.5s ease;
+}
+
+.dishInfo{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    font-size: 25px;
+}
+
+.recipeContainer .topp{
+    display: flex;
+    gap:5px;
+    justify-content: center;
+    align-items: center;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .footer{
+    background: #ff4107;
+    text-align: center;
+    padding: 15px;
+}
+
+.footer h1{
+    font-size: 15px;
+}
+
+.recipePop{
+    background:#ff4107;
+    padding:60px 20px 20px 20px;
+    width: 90%;
+    position: fixed;
+    visibility: hidden;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    border-radius: 8px;
+    opacity: 0;
+    margin-top: 15px;
+    transition:all 0.8s ease;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    overflow: auto;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+
+.ingredient ul {
+    list-style-type: decimal;
+    position: relative;
+    right: -20px;
+}
+
+.recipePop::-webkit-scrollbar,
+body::-webkit-scrollbar {
+     width: 8px;
+}
+
+.recipePop::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+     background: #fff;
+}
+
+.recipePop::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+     background-color: #ff4107;
+     border-radius: 4px;
+     border:1px solid white ;
+}
+
+.recipePop.active{
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+}
+
+.recipePop button{
+    border:none;
+    background:white;
+    padding: 5px;
+    border-radius:4px;
+    color:#ff4107;
+    font-size:25px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    position: absolute;
+    top:15px;
+    right: 15px;
+}
+
+.ingredient,.instruction{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 4px;
+    position: relative;
+    margin: 5px;
+}
+
+.infoRecipe{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media screen and (max-width:600px) {
+    header nav{
+        flex-direction: column;
+        gap:10px;
+    }
+    .searchBox input, .searchBox button{
+         padding: 8px 10px;
+         border:none;
+         outline: none;
+         font-size:16px;
+         border-radius: 5px;
+    }
+    
+}
